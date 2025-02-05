@@ -137,7 +137,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Fire.cpp" />
-    <ClCompile Include="Система_частиц_огонь_4.cpp" />
+    <ClCompile Include="ParticleSystemFlame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fire.h" />
