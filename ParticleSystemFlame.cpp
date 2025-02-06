@@ -7,8 +7,8 @@
 
 int main() {
     
-    constexpr float WINDOW_WIDTH = 800.0f;  // Ширина окна
-    constexpr float WINDOW_HEIGHT = 600.0f; // Высота окна
+    constexpr float WINDOW_WIDTH = 1280.0f;  // Ширина окна
+    constexpr float WINDOW_HEIGHT = 720.0f; // Высота окна
 
     // Создаем окно для отображения
     sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Realistic Fire Simulation");
@@ -36,7 +36,17 @@ int main() {
     // Запуск воспроизведения
     fireSound.play();
 
+    
+    // Загружаем текстуру из файла
+    sf::Texture texture;
+    if (!texture.loadFromFile("kisspng.png")) {
+        return -2; // Если не удалось загрузить текстуру, завершаем программу
+    }
 
+    // Создаем спрайт и устанавливаем текстуру
+    sf::Sprite sprite;
+    sprite.setTexture(texture);
+    sprite.setPosition(100,250);
 
     // Главный цикл программы
     while (window.isOpen()) {
@@ -52,6 +62,7 @@ int main() {
         fire.update(deltaTime*75);  // Обновляем состояние огня с учетом дельта времени
 
         window.clear();           // Очищаем экран
+        window.draw(sprite);      // Рисуем спрайт
         window.draw(fire);        // Отрисовываем огонь
         window.display();         // Отображаем изменения на экране
     }

@@ -34,9 +34,9 @@ private:
     std::uniform_int_distribution<int> xPositionDist;      // Распределение для начальной позиции по оси X
 
     // Константы для параметров искры и окна
-    static constexpr float SPARK_RADIUS = 4.0f;             // Радиус искры
-    static constexpr int SPARK_COUNT = 15000;                // Количество искр
-    static constexpr int WINDOW_HEIGHT = 600;               // Высота окна
+    static constexpr float SPARK_RADIUS = 6.0f;             // Радиус искры
+    static constexpr int SPARK_COUNT = 30000;                // Количество искр
+    int WINDOW_HEIGHT;                                      // Высота окна
 
     // Метод для создания новой искры
     void createSpark();

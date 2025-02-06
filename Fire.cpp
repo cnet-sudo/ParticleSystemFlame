@@ -5,9 +5,10 @@
 //  онструктор класса, инициализирует генератор случайных чисел и распределени€
 Fire::Fire(float width, float height)
     : randomEngine(std::random_device{}()),             // »нициализируем генератор случайных чисел
-    velocityDist(1.0f, 5.0f),                           // ƒиапазон скорости от 1 до 5
-    lifespanDist(0.2f, 1.0f),                           // ƒиапазон продолжительности жизни от 0.8 до 1
-    xPositionDist(0, static_cast<int>(width))           // ƒиапазон дл€ позиции по оси X
+    velocityDist(2.0f, 7.0f),                           // ƒиапазон скорости от 1 до 5
+    lifespanDist(0.2f, 1.2f),                           // ƒиапазон продолжительности жизни от 0.8 до 1
+    xPositionDist(0, static_cast<int>(width)),          // ƒиапазон дл€ позиции по оси X
+    WINDOW_HEIGHT(height)
 {
     // «аполнение начальных искр
     for (int i = 0; i < SPARK_COUNT; ++i) {
